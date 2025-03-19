@@ -32,6 +32,16 @@ const airlineMap = {
     'scoot': 'TR',
     'volaris': 'Y4',
     'air india express': 'IX',
+    'akasa air': 'QP',
+    'air arabia': 'G9',
+    'air astana': 'KC',
+    'air austral': 'UU',
+    'air baltic': 'BT',
+    'air botswana': 'BP',
+    'air canada rouge': 'RV',
+    'air caraibes': 'TX',
+    'air china': 'CA',
+    'air corsica': 'XK',
     'indigo': '6E',
     'spicejet': 'SG',
     'goair': 'G8',
@@ -52,6 +62,10 @@ const airlineMap = {
     'vietnam airlines': 'VN',
     'bamboo airways': 'QH',
     'jetstar japan': 'GK',
+    'peach aviation': 'MM',
+    'vanilla air': 'JW',
+    'air do': 'HD',
+    'solaseed air': '6J',
 };
 
 export async function GET(request) {
