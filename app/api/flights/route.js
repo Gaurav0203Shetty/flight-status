@@ -44,6 +44,14 @@ const airlineMap = {
     'airasia x': 'D7',
     'scoot tigerair': 'TR',
     'airasia': 'AK',
+    'jetstar asia': '3K',
+    'jetstar pacific': 'BL',
+    'scoot': 'TR',
+    'tigerair': 'TR',
+    'vietjet air': 'VJ',
+    'vietnam airlines': 'VN',
+    'bamboo airways': 'QH',
+    'jetstar japan': 'GK',
 };
 
 export async function GET(request) {
