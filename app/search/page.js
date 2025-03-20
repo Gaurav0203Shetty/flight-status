@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import {
@@ -90,8 +91,11 @@ export default function FlightSearchPage() {
 
             const status = flight.flight_status || 'N/A';
 
-            return (
-              <Card key={idx}>
+            const isActive = flight.live && !flight.live.is_ground;
+            const flightId = flight.flight?.iata || idx;
+
+            const CardContentComponent = (
+              <Card className="cursor-pointer hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <CardTitle>
                     {airlineName} — Flight {flightNum}
@@ -118,6 +122,14 @@ export default function FlightSearchPage() {
                   </div>
                 </CardContent>
               </Card>
+            );
+
+            return isActive ? (
+              <Link key={idx} href={`/flight/${flightId}`}>
+                {CardContentComponent}
+              </Link>
+            ) : (
+              <div key={idx}>{CardContentComponent}</div>
             );
           })}
         </div>
