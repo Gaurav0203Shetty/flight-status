@@ -119,6 +119,25 @@ export default function FlightSearchPage() {
                       Baggage: {baggage}<br />
                       Scheduled: {arrTime}
                     </p>
+                    <br />
+                    <p>
+                      <strong>Aircraft:</strong> {flight.aircraft?.model} ({flight.aircraft?.icao})
+                      <br />
+                      <strong>Registration:</strong> {flight.aircraft?.registration}
+                    </p>
+                    {flight.live && (
+                      <p>
+                        <strong>Live Location:</strong> {flight.live.latitude}, {flight.live.longitude}
+                      </p>
+                    )}
+                    {flight.live && flight.live.is_ground && (
+                      <p className="text-blue-500">Flight is currently on the ground.</p>
+                    )}
+                    {flight.live && !flight.live.is_ground && (
+                      <p className="text-green-500">Flight is currently in the air.</p>
+                    )}
+                    <br />
+                    <p>Click card to view location on map</p>
                   </div>
                 </CardContent>
               </Card>
